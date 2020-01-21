@@ -5,19 +5,19 @@ import {
   StyleSheet
 } from 'react-native'
 
-const ShopLogo = (props) => {
+const TitleBar = (props) => {
    return (
      <View style = {styles.titlebar}>
       <Text style = {styles.title} >Admin Panel </Text>
      </View>
    )
 }
-export default ShopLogo
+export default TitleBar
 
 const styles = StyleSheet.create({
   titlebar : {
      alignSelf: 'stretch',
-     height: 40,
+     height: 80,
      backgroundColor : "#9d000a",
   },
   title : {
@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
     fontSize : 18,
     width : 600,
     paddingLeft:10,
-    paddingTop:5,
+    paddingTop:40,
   }
 })

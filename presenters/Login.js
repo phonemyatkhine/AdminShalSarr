@@ -8,7 +8,9 @@ import {
 
 import Logo from '../views/components/Logo'
 import Input from '../views/components/Input'
-import ShopHome from './ShopHome'
+import RedButton from '../views/components/RedButton'
+import ExternalStyle from '../views/styles/ExternalStyle'
+
 
 class Login extends Component {
    state = {
@@ -33,13 +35,7 @@ class Login extends Component {
             <Text style={styles.title} >Admin Application</Text>
             <Input placeholder="Shop Account" password={false} handleInput={this.handleEmail}/>
             <Input placeholder="Password" password={true} handleInput={this.handlePassword}/>
-            <TouchableOpacity
-               style = {styles.submitButton}
-               onPress = {
-                  () => this.login(this.state.email, this.state.password)
-               }>
-               <Text style = {styles.submitButtonText}> Login </Text>
-            </TouchableOpacity>
+            <RedButton buttonText="Login" buttonStyles={ExternalStyle.submitButton} buttonTextStyles={ExternalStyle.submitButtonText} buttonHandle={this.login(this.state.email, this.state.password)} />
          </View>
       )
    }
@@ -65,16 +61,5 @@ const styles = StyleSheet.create({
       flex : 1,
       alignItems : "center",
    },
-   submitButton: {
-      backgroundColor: '#d63031',
-      paddingTop: 15,
-      margin: 30,
-      borderRadius : 8,
-      height: 50,
-      width : 200,
-   },
-   submitButtonText:{
-      color: 'white',
-      textAlign: 'center',
-   }
+
 })
